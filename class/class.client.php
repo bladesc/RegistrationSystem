@@ -17,10 +17,12 @@ class Client
 		$this->db->dbConnect();
 	}
 	
-	public function addClient()
-	{}
+	public function addClient($client)
+	{
+		
+	}
 	
-	public function removeClient()
+	public function removeClient($id)
 	{}
 	
 	public function changeClient($id,$client)

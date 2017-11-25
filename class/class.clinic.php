@@ -5,6 +5,9 @@ class Clinic
 {
 	private $errors;
 	private $clinic;
+	private $name;
+	private $clinic;
+	private $adress;
 	private $db;
 	private $query;
 	
@@ -17,13 +20,32 @@ class Clinic
 		$this->db->dbConnect();
 	}
 	
-	public function addClinic()
-	{}
+	public function addNameClinic($name)
+	{
+		$this->name=Functions::filter($name);
+	}
+	
+	public function addAdressClinic($adress)
+	{
+		$this->adress=Functions::filter($adress);
+	}
+	
+	
+	public function addClinic($clinic)
+	{
+		$this->query="INSERT INTO ".NAME_SELECT_CLINIC." ('id','idcities','name','adress') VALUES ('','',$this->name,$this->adress)";
+		$this->db->dbSetQuery($this->query);
+		if(!$this->db->dbExecute())
+		{   $this->db->showErrors();
+			die('bląd dodawania rekorudy "klinika"');
+		}
+		
+	}
 	
 	public function removeClinic($id)
 	{}
 	
-	public function changeClinic($id)
+	public function changeClinic($id,$clinic)
 	{}
 	
 	public function getClinic($id)
