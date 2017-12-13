@@ -29,9 +29,20 @@ class City
 			$y=0;
 			foreach ($result as $row) 
 			{
-				$tab_city[$y]['id_klienta'] = $row['citycame'];
+				$tab_city[$y] = $row['citycame'];
+				$y+=1;
 			}
-			return $this->info_client;
+			$name = "city";
+			$html = "<label for='{$name}'>Wybierz miasto</label>
+					<select name='{$name}' id='inp_city'>";
+					
+					foreach($tab_city as $key=>$value) 
+					{
+						$html .= "<option value='{$value}'>{$value}</option>";
+					}
+			$html .="</select>";
+
+			return $html;
 		}
 			
 		else  
