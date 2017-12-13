@@ -1,7 +1,11 @@
 ﻿<?php
 include('settings/settings.php');
+include("class/class.functions.php");
 include("class/class.dbmanager.php");
 include("class/class.city.php");
+include("class/class.clinic.php");
+include("class/class.date.php");
+include("class/class.doctor.php");
 ?>
 <!DOCTYPE html>
 <html>

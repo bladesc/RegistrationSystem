@@ -3,35 +3,18 @@
 
 class Functions{
 	
-	__construct()
+	function __construct()
 	{}
 	
-	static function generateList($name,$array_option)
-	{
-		if(!empty($array_option))
-		{
-			$html .= "<select id='$name'>";
-			foreach($array_option as $key)
-			{
-				$html .= "<option value='$key'>$key</option>";
-			}
-			$html .= "</select>";
-			return $html;
-		}
-		
-		else
-		{
-			return 0;
-		}
+	public static function correctValue($value)
+	{	
+		$value=trim($value);
+		$value=htmlspecialchars($value);
+		$value=addslashes($value);
+		return $value;
 	}
-
-	static function filter($value)
-    {
-    $value=trim(htmlspecialchars(addslashes($value)));
-	return $value;
-    }
 	
-	__destruct()
+	function __destruct()
 	{}
 
 

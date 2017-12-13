@@ -6,7 +6,6 @@ class Clinic
 	private $errors;
 	private $clinic;
 	private $name;
-	private $clinic;
 	private $adress;
 	private $db;
 	private $query;
@@ -16,8 +15,42 @@ class Clinic
 	function __construct()
 	{
 		$this->errors=Array();
-		$this->db = new DbManager;
-		$this->db->dbConnect();
+		$this->con = new dbManager;
+		$this->con->getConnect();
+	}
+	
+	public function getClinicsListSelect($city)
+	{
+		$checkcity=Functions::correctValue($city);
+		$query="SELECT * FROM `clinics` WHERE `idcities` = $checkcity";
+		$result = $this->con->selectWhere($query);
+			
+		if($result->rowCount()>0) 
+		{
+			$y=0;
+			foreach ($result as $row) 
+			{
+				$tab_clinic[$y]['city'] = $row['name'];
+				$tab_clinic[$y]['id'] = $row['id'];
+				$y+=1;
+			}
+			$name = "clinic";
+			$html = "<label for='{$name}'>Wybierz miasto</label>
+					<select name='{$name}' id='inp_city'>";
+					
+					foreach($tab_clinic as $key=>$value) 
+					{
+						$html .= "<option value='{$value['id']}'>{$value['city']}</option>";
+					}
+			$html .="</select>";
+
+			return $html;
+		}
+			
+		else  
+		{		
+			$this->err_client .= "Brak danych w bazie";
+		}
 	}
 	
 	public function addNameClinic($name)
@@ -55,7 +88,7 @@ class Clinic
 	
 	function __destruct()
 	{
-		$this->db->dbClose();
+		$this->con->closeConnection();
 	}	
 	
 

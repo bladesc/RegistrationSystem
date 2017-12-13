@@ -1,9 +1,6 @@
 <?php
-
-
 $city = new City;
 $city_list = $city->getCitiesListSelect();
-
 ?>
 
 <div id="box_navigation">

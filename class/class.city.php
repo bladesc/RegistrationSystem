@@ -29,7 +29,8 @@ class City
 			$y=0;
 			foreach ($result as $row) 
 			{
-				$tab_city[$y] = $row['citycame'];
+				$tab_city[$y]['city'] = $row['citycame'];
+				$tab_city[$y]['id'] = $row['id'];
 				$y+=1;
 			}
 			$name = "city";
@@ -38,7 +39,7 @@ class City
 					
 					foreach($tab_city as $key=>$value) 
 					{
-						$html .= "<option value='{$value}'>{$value}</option>";
+						$html .= "<option value='{$value['id']}'>{$value['city']}</option>";
 					}
 			$html .="</select>";
 

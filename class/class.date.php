@@ -13,8 +13,8 @@ class Date
 	function __construct()
 	{
 		$this->errors=Array();
-		$this->db = new DbManager;
-		$this->db->dbConnect();
+		$this->con = new dbManager;
+		$this->con->getConnect();
 	}
 	
 	public function addDates($date)
@@ -31,7 +31,7 @@ class Date
 	
 	function __destruct()
 	{
-		$this->db->dbClose();
+		$this->con->closeConnection();
 	}	
 	
 	

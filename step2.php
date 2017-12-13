@@ -1,3 +1,15 @@
+<?php
+if(isset($_GET['city']))
+{
+	$clinic = new Clinic;
+	$clinic_list = $clinic->getClinicsListSelect($_GET['city']);
+}
+else
+{
+	$clinic_list = "Blędny parametr GET";
+}
+?>
+
 <div id="box_navigation">
 	<ul>
 		<li>Miasto</li>
@@ -9,13 +21,7 @@
 </div>
 <div id="box_form">
 	<form method="GET" action="rejestracja.php">
-		<label for="clinic">Wybierz klinikę</label>
-			<select name="clinic" id="inp_city">
-				<option value="volvo">Volvo</option>
-				<option value="saab">Saab</option>
-				<option value="opel">Opel</option>
-				<option value="audi">Audi</option>
-			</select>
+		<?php echo $clinic_list; ?>
 		<input type="hidden" name="id" value="3"></input>	
 		<input class="i_allforms" type="submit" value="Dalej" name="send"></input>
 	</form>			
