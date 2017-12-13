@@ -8,25 +8,41 @@ class City
 	private $query;
 	private $city;
 	
+	
 	const NAME_SELECT_CITY = "city";
 	
 	function __construct()
 	{
 		$this->errors=Array();
-		$this->db = new DbManager;
-		$this->db->dbConnect();
+		$this->con = new dbManager;
+		$this->con->getConnect();
+	}
+	
+	public function getCitiesListSelect()
+	{
+		
+		$query="SELECT * FROM `cities`";
+		$result = $this->con->selectWhere($query);
+			
+		if($result->rowCount()>0) 
+		{
+			$y=0;
+			foreach ($result as $row) 
+			{
+				$tab_city[$y]['id_klienta'] = $row['citycame'];
+			}
+			return $this->info_client;
+		}
+			
+		else  
+		{		
+			$this->err_client .= "Brak danych w bazie";
+		}
 	}
 	
 	public function addCity($city)
 	{
-		DbManager::filterValue($city);
-		$this->query="INSERT INTO cities (cityname) VALUES ($city)"; 
-		$this->db->dbSetQuery($this->query);
-		if(!$this->db->dbExecute())
-			{   	
-			$this->db->showErrors();
-			die();
-			}
+		
 	}
 	
 	public function removeCity($id)
@@ -40,12 +56,12 @@ class City
 	
 	public function generateList()
 	{
-		Functions::generateList(NAME_SELECT, );
+		
 	}
 	
 	function __destruct()
 	{
-		$this->db->dbClose();
+		$this->con->closeConnection();
 	}	
 	
 }

@@ -20,7 +20,7 @@ html {  height: 100%; width: 100%; margin: 0; padding: 0; font-family: Arial, Ta
 		#box_navigation { width: 100%; }
 		#box_navigation ul { font-size: 0; list-style-type: none; margin: 0; padding: 0; width: 100%;}
 		#box_navigation ul li { text-align: center;font-size: 17px; width: 20%; display: inline-block; padding: 20px 0 20px 0; margin: 0; border-bottom: 4px solid #1bace8;} 
-		#inp_city { width: 400px; font-size: 21px; border: 1px solid #0460a9; padding: 10px;}
+		#inp_city { width: 400px; font-size: 21px; border: 1px solid #cdcdcd; padding: 10px;}
 		#box_form { width: 100%; text-align: center; padding: 40px 0; }
 		.i_allforms { margin: 20px auto; text-decoration: none; display: block; transition: 0.4s; background: #0460a9; color: #fff; padding: 10px 30px; display: block; margin-top: 20px; border: none; border-radius: 5px; font-size: 19px; cursor: pointer;}
 		.i_allforms:hover { border-radius: 40px; background: #097edb;}

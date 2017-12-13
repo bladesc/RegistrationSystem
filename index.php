@@ -20,13 +20,13 @@ include("class/class.dbmanager.php");
 				<h1>
 				Rejestracja <br/>pacjentów <br/>online
 				</h1>
-				<a href="rejestracja.php" id="i_register">Dokonaj rejestracji >></a>
+				<form method="GET" action="rejestracja.php">
+					<input type="hidden" name="id" value="1"></input>
+					<input type="submit" name="send" value="Dokonaj rejestracji >>" id="i_register"></input>
+				</form>
 			</div>
 			
-			<?php
-   $connect = new DbManager();
-   $connect->dbConnect();   
-   ?>
+		
 			<div id="copyright">
 				<p>Projekt: <b>Damian Szczęsny & Adrian Głąbik</b></p>
 			</div>

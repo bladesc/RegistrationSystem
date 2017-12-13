@@ -1,7 +1,7 @@
-<?php
+﻿<?php
 include('settings/settings.php');
 include("class/class.dbmanager.php");
-
+include("class/class.city.php");
 ?>
 <!DOCTYPE html>
 <html>

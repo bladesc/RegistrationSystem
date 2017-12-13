@@ -1,85 +1,71 @@
 <?php
-//class.dbmanager.php
+//dbconnect.class.php
 
-class DbManager 
+class dbManager
 {
-	private $query;
-	private $execute;
-	protected $errors;
-	private $connect;
-	private $result;
-	protected $last_id;
-	
-	function __construct() {
-		$this->errors = Array();
-	}
-	
-	public function showErros()
+/*localhost	*/
+private $dbname = 'project_registration';
+private $host = 'localhost';
+private $user = 'root';
+private $pass = '';
+/*
+//hekko
+private $dbname = '';
+private $host = 'localhost';
+private $user = '';
+private $pass = '';
+*/
+private $charset = 'utf8';
+private $data;
+public $conn;
+private $db;
+
+
+function __construct() {}
+
+public function getConnect()
+{
+	try
 	{
-		foreach($this->errors as $key=>$value)
-		{
-			echo $key . " : " . $value . "<br/>";
-		}
-		
+	$this->data = "mysql:host=$this->host;dbname=$this->dbname;charset=$this->charset";
+	$this->conn = new PDO($this->data, $this->user, $this->pass);
+	$this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //dodatkowe opcje -> manual
+
 	}
-	
-	public function dbConnect()
+	catch(PDOException $e)
 	{
-		
-		$this->connect = mysqli_connect(DBSERVER,DBUSER,DBPASSWORD,DBNAME);
-		if($this->connect)
-		{
-			echo "Connection succed";  
-		} 
-		else
-		{
-			array_push($this->errors, "Can't connect");
-		}
-		
-		
+		echo $e->getMessage();
 	}
 	
-	public function dbSetQuery($query)
-	{
-		$this->query=$query;
-		
-		
-	}
 	
-	public function dbExecute()
-	{
-        $this->result = mysqli_query($this->connect, $this->query);
-		if($this->result)
-		{
-			
-			$this->last_id=mysql_insert_id();
-			return true;
-		}
-		else
-		{
-			array_push($this->errors,"command executed failed");
-			return false;
-		}
-		
-	}
-	
-	public function dbClose()
-	{
-		mysqli_close($this->connect);
-	}
-	
-	public function getID()
-	{
-		return $this->last_id;
-	}
-	
-	function __destruct()
-	{}
-	
-	
+	return $this->conn;
+}
+
+public function closeConnection()
+{
+	$this->conn = null;
 	
 }
 
+public function selectWhere($query)
+{
+	$db=$this->getConnect();
+	try
+			{
+				$result = $db->query($query);
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+			}
+			
+			if($value)
+			{
+				echo "tabela zainstalowana<br/>";
+			}
+			return $result;
+}
 
+}
 
 ?>
