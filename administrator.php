@@ -47,7 +47,7 @@ if(isset($_POST['addcity']))
 								</form>
 								<?php
 								$city = new City;
-								echo($city_list = $city->getCitiesListSelect(false));
+								echo($city->getCitiesListSelect(false));
 								?>
 							</div>
 						</div></div>
@@ -58,7 +58,10 @@ if(isset($_POST['addcity']))
 								<form action="administrator.php" method="GET">
 									<input type="submit" name="addclinic" value="Dodaj klinikę"></input>
 								</form>
-								kliniki
+								<?php
+								$clinic = new Clinic;
+								echo($clinic->getClinicsListSelect(false));
+								?>
 							</div>
 						</div></div>
 						
@@ -68,7 +71,10 @@ if(isset($_POST['addcity']))
 								<form action="administrator.php" method="GET">
 									<input type="submit" name="adddoctor" value="Dodaj lekarza"></input>
 								</form>
-								kliniki
+								<?php
+								$doctor = new Doctor;
+								echo($doctor->getDoctorsListSelect(false));
+								?>
 							</div>
 						</div></div>
 					</div>
@@ -78,7 +84,10 @@ if(isset($_POST['addcity']))
 							<form action="administrator.php" method="GET">
 								<input type="submit" name="adddate" value="Dodaj rejestrację"></input>
 							</form>
-							rejestracje
+							<?php
+								$date = new Date;
+								echo($date->getDatesListSelect(false));
+								?>
 						</div>
 					</div></div>
 				

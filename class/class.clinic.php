@@ -19,6 +19,7 @@ class Clinic
 		$this->con->getConnect();
 	}
 	
+	
 	public function getClinicsListSelect($city)
 	{
 		$checkcity=Functions::correctValue($city);
