@@ -54,9 +54,40 @@ class City
 	
 	public function addCity($city)
 	{
-		$city = Functions::correctValue($city);
-		$query="INSERT INTO `cities` (`id`, `citycame`) VALUES ('', '$city')";
-		$this->con->selectWhere($query);
+		
+		if(empty($city))
+		{  
+			$_SESSION['communicate']['status'] = true;
+			$_SESSION['communicate']['text'] = "<div class='commbad'>Nie wpisałeś żadnej wartości w polu 'miasto'</div>";
+		}
+		else
+		{	
+			$city = Functions::correctValue($city);
+			$query="SELECT `citycame` FROM `cities` WHERE `citycame`='$city'";
+			$result = $this->con->selectWhere($query);
+			
+			if($result->rowCount()>0) 
+			{
+				$_SESSION['communicate']['status'] = true;
+				$_SESSION['communicate']['text'] = "<div class='commbad'>Takie miasto już istnieje'</div>";
+			}
+			
+			else  
+			{		
+				
+				$query="INSERT INTO `cities` (`id`, `citycame`) VALUES ('', '$city')";
+				if($this->con->selectWhere($query))
+				{
+					$_SESSION['communicate']['status'] = true;
+					$_SESSION['communicate']['text'] = "<div class='commgood'>Miasto zostało dodane pomyślnie</div>";
+				}
+				else
+				{
+					$_SESSION['communicate']['status'] = true;
+					$_SESSION['communicate']['text'] = "<div class='commbad'>Nie udało się dodać miasta</div>";
+				}
+			}
+		}
 	}
 	
 	public function removeCity($id)

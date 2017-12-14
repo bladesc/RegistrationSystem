@@ -9,11 +9,8 @@ include("class/class.doctor.php");
 
 if(isset($_POST['addcity']))
 {
-	if($_POST['addcityname'])
-	{
 		$city = new City;
 		$city->addCity($_POST['addcityname']);
-	}
 }	
 
 ?>
@@ -33,6 +30,13 @@ if(isset($_POST['addcity']))
 			<div id="content">
 				<div class="incontent">
 					<h2>Panel administracyjny</h2>
+					<?php 
+					if($_SESSION['communicate']['status'])
+					{
+						echo $_SESSION['communicate']['text'];
+					}
+					?>
+			
 					<div class="row33">
 						<div class="row100"><div class="inrow">
 							<h3>Lista miast</h3>
