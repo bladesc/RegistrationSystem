@@ -45,7 +45,10 @@ if(isset($_POST['addcity']))
 									<input type="text" name="addcityname"></input>
 									<input type="submit" name="addcity" value="Dodaj miasto"></input>
 								</form>
-								miasta
+								<?php
+								$city = new City;
+								echo($city_list = $city->getCitiesListSelect(false));
+								?>
 							</div>
 						</div></div>
 						

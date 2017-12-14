@@ -18,7 +18,7 @@ class City
 		$this->con->getConnect();
 	}
 	
-	public function getCitiesListSelect()
+	public function getCitiesListSelect($select)
 	{
 		
 		$query="SELECT * FROM `cities`";
@@ -33,17 +33,31 @@ class City
 				$tab_city[$y]['id'] = $row['id'];
 				$y+=1;
 			}
-			$name = "city";
-			$html = "<label for='{$name}'>Wybierz miasto</label>
+			if($select)
+			{
+				$name = "city";
+				$html = "<label for='{$name}'>Wybierz miasto</label>
 					<select name='{$name}' id='inp_city'>";
 					
 					foreach($tab_city as $key=>$value) 
 					{
 						$html .= "<option value='{$value['id']}'>{$value['city']}</option>";
 					}
-			$html .="</select>";
-
+				$html .="</select>";
+			}
+			else
+			{
+				$name = "<div class='list_data'>";
+				
+					
+					foreach($tab_city as $key=>$value) 
+					{
+						$html .= "<div class='data10'>{$value['id']}</div><div class='data60'>{$value['city']}</div><div class='data30'><form action='administrator.php' methd='POST'><input type='hidden' value='{$value['id']}' name=idcity'></input><input type='submit' value='Usuń' name='deletecity'></input</form></div>";
+					}
+				$html .="</div><div class='box_footer'></div>";
+			}
 			return $html;
+			
 		}
 			
 		else  
@@ -99,10 +113,7 @@ class City
 	public function getCity($id)
 	{}
 	
-	public function generateList()
-	{
-		
-	}
+	
 	
 	function __destruct()
 	{

@@ -1,6 +1,6 @@
 <?php
 $city = new City;
-$city_list = $city->getCitiesListSelect();
+$city_list = $city->getCitiesListSelect(true);
 ?>
 
 <div id="box_navigation">
