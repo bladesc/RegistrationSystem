@@ -54,7 +54,9 @@ class City
 	
 	public function addCity($city)
 	{
-		
+		$city = Functions::correctValue($city);
+		$query="INSERT INTO `cities` (`id`, `citycame`) VALUES ('', '$city')";
+		$this->con->selectWhere($query);
 	}
 	
 	public function removeCity($id)

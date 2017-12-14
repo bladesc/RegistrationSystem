@@ -1,7 +1,8 @@
 <?php
 //class.functions.php
 
-class Functions{
+class Functions
+{
 	
 	function __construct()
 	{}

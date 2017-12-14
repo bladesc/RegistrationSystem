@@ -1,6 +1,20 @@
-<?php
+﻿<?php
 include('settings/settings.php');
+include("class/class.functions.php");
 include("class/class.dbmanager.php");
+include("class/class.city.php");
+include("class/class.clinic.php");
+include("class/class.date.php");
+include("class/class.doctor.php");
+
+if(isset($_POST['addcity']))
+{
+	if($_POST['addcityname'])
+	{
+		$city = new City;
+		$city->addCity($_POST['addcityname']);
+	}
+}	
 
 ?>
 <!DOCTYPE html>
@@ -23,7 +37,8 @@ include("class/class.dbmanager.php");
 						<div class="row100"><div class="inrow">
 							<h3>Lista miast</h3>
 							<div class="list">
-								<form action="administrator.php" method="GET">
+								<form action="administrator.php" method="POST">
+									<input type="text" name="addcityname"></input>
 									<input type="submit" name="addcity" value="Dodaj miasto"></input>
 								</form>
 								miasta

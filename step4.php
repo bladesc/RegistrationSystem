@@ -2,7 +2,7 @@
 if(isset($_GET['doctor']))
 {
 	$date = new Date;
-	$dates_list = $date->getDoctorsListSelect($_GET['doctor']);
+	$dates_list = $date->getDatesListSelect($_GET['doctor']);
 }
 else
 {

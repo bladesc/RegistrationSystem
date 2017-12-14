@@ -17,6 +17,8 @@ class Date
 		$this->con->getConnect();
 	}
 	
+	public function getDatesListSelect()
+	{}
 	public function addDates($date)
 	{}
 	
