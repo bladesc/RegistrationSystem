@@ -35,7 +35,7 @@ class Clinic
 				$y+=1;
 			}
 			$name = "clinic";
-			$html = "<label for='{$name}'>Wybierz miasto</label>
+			$html = "<label for='{$name}'>Wybierz klinikę</label>
 					<select name='{$name}' id='inp_city'>";
 					
 					foreach($tab_clinic as $key=>$value) 

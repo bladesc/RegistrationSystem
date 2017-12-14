@@ -1,7 +1,7 @@
 html {  height: 100%; width: 100%; margin: 0; padding: 0; font-family: Arial, Tahoma;}
 		body { background: url('../images/bg.png') bottom center no-repeat; height: 100%; width: 100%; position: relative; margin: 0; padding: 0;}
 		body p  { margin: 20px 0 20px 0; padding: 0; }
-		#haslo { position: absolute; top: 50%; margin-top: -185px;}
+		#haslo { position: absolute; top: 40%; margin-top: -185px;}
 		#haslo h1 { font-size: 100px; color: #1bace8; font-family: 'Alegreya Sans', sans-serif; font-weight: 800; margin: 0; padding: 0;}
 		#box_page { height: 100%; position: relative; width: 1200px; margin: 0 auto;}
 		#i_register { float: left; text-decoration: none; display: block; transition: 0.4s; background: #0460a9; color: #fff; padding: 10px 30px; display: block; margin-top: 20px; border: none; border-radius: 5px; font-size: 19px; cursor: pointer;}
@@ -16,7 +16,7 @@ html {  height: 100%; width: 100%; margin: 0; padding: 0; font-family: Arial, Ta
 		#logo { margin: 0 auto; width: 130px; height: 130px; background: #1cace8; color: #fff; text-align: center; line-height: 130px; font-family: 'Alegreya Sans', sans-serif; font-weight: 800; font-size: 40px;}
 		#content { width: 100%; }
 		.incontent { width: 1200px; margin: 0 auto; }
-		h2 {  color: #1bace8; width: 100%; text-align: center; font-size: 48px; font-family: 'Alegreya Sans', sans-serif; font-weight: 800; margin: 0; padding: 30px 0; }
+		h2 {  color: #1bace8; width: 100%; text-align: center; font-size: 48px; font-family: 'Alegreya Sans', sans-serif; font-weight: 800; margin: 0; padding: 40px 0 10px 0; }
 		#box_navigation { width: 100%; }
 		#box_navigation ul { font-size: 0; list-style-type: none; margin: 0; padding: 0; width: 100%;}
 		#box_navigation ul li { text-align: center;font-size: 17px; width: 20%; display: inline-block; padding: 20px 0 20px 0; margin: 0; border-bottom: 4px solid #1bace8;} 
@@ -25,3 +25,8 @@ html {  height: 100%; width: 100%; margin: 0; padding: 0; font-family: Arial, Ta
 		.i_allforms { margin: 20px auto; text-decoration: none; display: block; transition: 0.4s; background: #0460a9; color: #fff; padding: 10px 30px; display: block; margin-top: 20px; border: none; border-radius: 5px; font-size: 19px; cursor: pointer;}
 		.i_allforms:hover { border-radius: 40px; background: #097edb;}
 		.liactive { background: #1bace8; color: #fff }
+		.row100 { background: #f2f4f8; width: 100%;  padding: 40px 0; margin: 20px 0;}
+		.row33 { float: left;  width: 33.3%; }
+		.row66 { background: #f2f4f8; width: 63.3%; padding: 40px 0; margin: 20px 0; float: right;}
+		h3 { font-size: 20px; font-weight: bold; margin: 0 0 20px 0; padding: 0;}
+		.inrow { width: 80%; margin: 0 10%;}

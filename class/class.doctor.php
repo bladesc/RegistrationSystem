@@ -32,8 +32,8 @@ class Doctor
 				$tab_doctors[$y]['id'] = $row['id'];
 				$y+=1;
 			}
-			$name = "clinic";
-			$html = "<label for='{$name}'>Wybierz miasto</label>
+			$name = "doctor";
+			$html = "<label for='{$name}'>Wybierz lekarza</label>
 					<select name='{$name}' id='inp_city'>";
 					
 					foreach($tab_doctors as $key=>$value) 
