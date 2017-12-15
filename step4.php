@@ -13,9 +13,9 @@ else
 
 <div id="box_navigation">
 	<ul>
-		<li>Miasto</li>
-		<li>Klinika</li>
-		<li>Lekarz</li>
+		<li class="lidone">Miasto</li>
+		<li class="lidone">Klinika</li>
+		<li class="lidone">Lekarz</li>
 		<li class="liactive">Data</li>
 		<li>Dane osobowe</li>
 	</ul>
@@ -23,6 +23,9 @@ else
 <div id="box_form">
 	<h3>Lista dostępnych dat</h3>
 	<form method="GET" action="rejestracja.php">
+		<?php 
+		$dateform = new Date;
+		$dateform->generateDateForm(); ?>
 		<?php echo $dates_list; ?>
 		<input type="hidden" name="id" value="5"></input>	
 		<input class="i_allforms" type="submit" value="Dalej" name="send"></input>

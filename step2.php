@@ -12,7 +12,7 @@ else
 
 <div id="box_navigation">
 	<ul>
-		<li>Miasto</li>
+		<li class="lidone">Miasto</li>
 		<li class="liactive">Klinika</li>
 		<li>Lekarz</li>
 		<li>Data</li>

@@ -13,8 +13,8 @@ else
 
 <div id="box_navigation">
 	<ul>
-		<li>Miasto</li>
-		<li>Klinika</li>
+		<li class="lidone">Miasto</li>
+		<li class="lidone">Klinika</li>
 		<li class="liactive">Lekarz</li>
 		<li>Data</li>
 		<li>Dane osobowe</li>

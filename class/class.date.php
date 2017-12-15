@@ -18,6 +18,34 @@ class Date
 		$this->con->getConnect();
 	}
 	
+	public function generateDateForm()
+	{
+		$now = date("Y-m-d H:i:s");
+		$nownumericdate = strtotime($now);
+		$html = "";
+		for($i=0; $i<7; $i++)
+		{	$dateactual = strtotime("+$i day", $nownumericdate);
+			$date_year = date("Y", $dateactual);
+			$date_month = date("m", $dateactual);
+			$date_day = date("d", $dateactual);
+
+			$html .= "
+				<div class='date_window'>
+					<form action='link' method='GET'>
+						<div class='box_day'>{$date_day}</div>
+						<div class='box_month'>{$date_month}.{$date_year}</div>
+						
+						<input type='hidden' name='b_day' value='{$date_day}'></input>
+						<input type='hidden' name='b_month' value='{$date_month}'></input>
+						<input type='hidden' name='b_year' value='{$date_year}'></input>
+					</form>
+				</div>	
+				";
+		}
+		
+		echo $html;		
+	}
+	
 	public function getDatesList()
 	{
 		$datefrom = date("Y-m-d H:i:s");
@@ -55,7 +83,7 @@ class Date
 		}
 			
 		else  
-		{		echo "brak";
+		{		
 			$this->err_client .= "Brak danych w bazie";
 		}
 		

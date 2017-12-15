@@ -1,10 +1,10 @@
 <div id="box_navigation">
 	<ul>
-		<li>Miasto</li>
-		<li>Klinika</li>
-		<li>Lekarz</li>
-		<li>Data</li>
-		<li class="liactive">Dane osobowe</li>
+		<li class="lidone">Miasto</li>
+		<li class="lidone">Klinika</li>
+		<li class="lidone">Lekarz</li>
+		<li class="lidone">Data</li>
+		<li class="liactive2">Dane osobowe</li>
 	</ul>
 </div>
 <div id="box_form">

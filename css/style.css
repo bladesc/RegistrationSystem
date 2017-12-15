@@ -19,12 +19,15 @@ html {  height: 100%; width: 100%; margin: 0; padding: 0; font-family: Arial, Ta
 		h2 {  color: #1bace8; width: 100%; text-align: center; font-size: 48px; font-family: 'Alegreya Sans', sans-serif; font-weight: 800; margin: 0; padding: 40px 0 10px 0; }
 		#box_navigation { width: 100%; }
 		#box_navigation ul { font-size: 0; list-style-type: none; margin: 0; padding: 0; width: 100%;}
-		#box_navigation ul li { text-align: center;font-size: 17px; width: 20%; display: inline-block; padding: 20px 0 20px 0; margin: 0; border-bottom: 4px solid #1bace8;} 
+		#box_navigation ul li { text-align: center;font-size: 17px; width: 19.8%; display: inline-block; padding: 20px 0 20px 0; margin: 0 0.1%; border-bottom: 4px solid #1bace8;} 
 		#inp_city { width: 400px; font-size: 21px; border: 1px solid #cdcdcd; padding: 10px;}
 		#box_form { width: 100%; text-align: center; padding: 40px 0; }
 		.i_allforms { margin: 20px auto; text-decoration: none; display: block; transition: 0.4s; background: #0460a9; color: #fff; padding: 10px 30px; display: block; margin-top: 20px; border: none; border-radius: 5px; font-size: 19px; cursor: pointer;}
 		.i_allforms:hover { border-radius: 40px; background: #097edb;}
 		.liactive { background: #1bace8; color: #fff }
+		.liactive2 { background: #1bace8; color: #fff }
+		.lidone  { background: #e8f4f9; }
+
 		.row100 { background: #f2f4f8; width: 100%;  padding: 40px 0; margin: 20px 0;}
 		.row33 { float: left;  width: 33.3%; }
 		.row66 { background: #f2f4f8; width: 63.3%; padding: 40px 0; margin: 20px 0; float: right;}
@@ -45,4 +48,7 @@ html {  height: 100%; width: 100%; margin: 0; padding: 0; font-family: Arial, Ta
 		.row33 input { width: 90%; margin: 5px 0;}
 		.row33 select { width: 90% !important; margin: 5px 0; font-size: 13px !important;}
 		.row33 label { font-size: 15px;}
+		.date_window { width: 14.0%; margin: 20px 0.1%; background: #e8f4f9;
+float: left; padding: 30px 0;}
+.box_day { font-size: 44px;}
 		
