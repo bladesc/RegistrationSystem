@@ -98,15 +98,42 @@ class Clinic
 	}
 	
 	
-	public function addClinic($clinic)
+	public function addClinic($clinic,$idcity, $adress )
 	{
-		$this->query="INSERT INTO ".NAME_SELECT_CLINIC." ('id','idcities','name','adress') VALUES ('','',$this->name,$this->adress)";
-		$this->db->dbSetQuery($this->query);
-		if(!$this->db->dbExecute())
-		{   $this->db->showErrors();
-			die('bląd dodawania rekorudy "klinika"');
-		}
 		
+		if(empty($clinic))
+		{  
+			$_SESSION['communicate']['status'] = true;
+			$_SESSION['communicate']['text'] = "<div class='commbad'>Nie wpisałeś żadnej wartości w polu 'klinika'</div>";
+		}
+		else
+		{	$idcity = Functions::correctValue($idcity);
+			$clinic = Functions::correctValue($clinic);
+			$query="SELECT `id` FROM `clinics` WHERE `name`='$clinic'";
+			$result = $this->con->selectWhere($query);
+			
+			if($result->rowCount()>0) 
+			{
+				$_SESSION['communicate']['status'] = true;
+				$_SESSION['communicate']['text'] = "<div class='commbad'>Taka klinika już istnieje</div>";
+			}
+			
+			else  
+			{		
+				
+				$query="INSERT INTO `clinics` (`id`, `idcities`,`name`, `adress`) VALUES ('', '$idcity', '$clinic', '$adress')";
+				if($this->con->selectWhere($query))
+				{
+					$_SESSION['communicate']['status'] = true;
+					$_SESSION['communicate']['text'] = "<div class='commgood'>Klinika została dodane pomyślnie</div>";
+				}
+				else
+				{
+					$_SESSION['communicate']['status'] = true;
+					$_SESSION['communicate']['text'] = "<div class='commbad'>Nie udało się dodać kliniki/div>";
+				}
+			}
+		}
 	}
 	
 	public function removeClinic($id)
