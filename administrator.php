@@ -16,10 +16,15 @@ if(isset($_POST['addcity']))
 if(isset($_POST['addclinic']))
 {	
 		$clinic = new Clinic;
-		$clinic->addClinic($_POST['addclinicname'], $_POST['inp_city'], $_POST['addclinicadress']);
-		
+		$clinic->addClinic($_POST['addclinicname'], $_POST['inp_city'], $_POST['addclinicadress']);	
 }	
 
+if(isset($_POST['adddoctor']))
+{	
+		$doctor = new Doctor;
+		$doctor->addDoctor($_POST['adddoctorname'], $_POST['inp_clinic'], $_POST['adddoctronumber']);	
+		echo "ssdsd";
+}	
 ?>
 <!DOCTYPE html>
 <html>
@@ -71,7 +76,7 @@ if(isset($_POST['addclinic']))
 								<input type="text" name="addclinicadress"></input>
 								<?php
 									$city = new City;
-									echo($city->getCitiesListSelect(true));
+									echo $city->getCitiesListSelect(true);
 								?>
 									<input type="submit" name="addclinic" value="Dodaj klinikę"></input>
 								</form>
@@ -85,7 +90,15 @@ if(isset($_POST['addclinic']))
 						<div class="row100"><div class="inrow">
 							<h3>Lista lekarzy</h3>
 							<div class="list">
+								
 								<form action="administrator.php" method="POST">
+									<input type="text" name="adddoctorname"></input>
+									<input type="text" name="adddoctornumber"></input>
+									<?php
+									$clinic = new Clinic;
+									echo $clinic->getClinicsListSelectAll();
+									?>
+									
 									<input type="submit" name="adddoctor" value="Dodaj lekarza"></input>
 								</form>
 								<?php
