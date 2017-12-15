@@ -32,10 +32,17 @@ html {  height: 100%; width: 100%; margin: 0; padding: 0; font-family: Arial, Ta
 		.inrow { width: 80%; margin: 0 10%;}
 		.commgood { width: 100%; padding: 10px 0; text-align: center; border: 1px solid #00ff30; background: #daffe1; color: #414942;}
 		.commbad { width: 100%; padding: 10px 0; text-align: center; border: 1px solid #ff0000; background: #f7dbdb; color: #494141;}
-		.data10 { width: 10%; float: left; height: 30px; line-height: 30px; border-top: 1px solid #eaeaea;}
-		.data60 { width: 60%; float: left; height: 30px; line-height: 30px; border-top: 1px solid #eaeaea;}
-		.data30 { width: 30%; float: left; height: 30px; line-height: 30px; border-top: 1px solid #eaeaea;}
+		.data10 { width: 10%; float: left; height: 30px; line-height: 30px; border-top: 1px solid #cdcdcd;}
+		.data60 { width: 60%; float: left; height: 30px; line-height: 30px; border-top: 1px solid #cdcdcd;}
+		.data30 { width: 30%; float: left; height: 30px; line-height: 30px; border-top: 1px solid #cdcdcd; text-align: right;}
 		.box_footer { width: 100%; clear: both; height: 0; font-size: 0;}
 		.active { display: block !important;}
-		#box_city, #box_doctor, #box_clinic { display: none;}
+		#box_city, #box_doctor, #box_clinic { display: none; padding: 20px 0; text-align: center; background: #dce2eb; margin: 20px 0;}
+		
+		#box_clinic #inp_city {width: 80%;}
+		.list_data { font-size: 13px;}
+		#box_city_b, #box_clinic_b, #box_doctor_b  { width: 100%; margin-bottom: 20px;}
+		.row33 input { width: 90%; margin: 5px 0;}
+		.row33 select { width: 90% !important; margin: 5px 0; font-size: 13px !important;}
+		.row33 label { font-size: 15px;}
 		

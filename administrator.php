@@ -1,4 +1,4 @@
-﻿<?php
+﻿<?php ini_set('error_reporting', E_ALL);
 include('settings/settings.php');
 include("class/class.functions.php");
 include("class/class.dbmanager.php");
@@ -62,6 +62,7 @@ if(isset($_POST['adddoctor']))
 								<button id="box_city_b">Dodaj miasto</button>
 								<div id="box_city">
 									<form action="administrator.php" method="POST">
+										<label for="addclinicname">Miasto</label>
 										<input type="text" name="addcityname"></input>
 										<input type="submit" name="addcity" value="Dodaj miasto"></input>
 									</form>
@@ -79,7 +80,9 @@ if(isset($_POST['adddoctor']))
 								<button id="box_clinic_b">Dodaj miasto</button>
 								<div id="box_clinic">
 									<form action="administrator.php" method="POST">
+										<label for="addclinicname">Nazwa kliniki</label>
 										<input type="text" name="addclinicname"></input>
+										<label for="adddoctorname">Adres</label>
 										<input type="text" name="addclinicadress"></input>
 										<?php
 											$city = new City;
@@ -101,7 +104,9 @@ if(isset($_POST['adddoctor']))
 								<button id="box_doctor_b">Dodaj miasto</button>
 								<div id="box_doctor">
 									<form action="administrator.php" method="POST">
+										<label for="adddoctorname">Nazwa doktora</label>
 										<input type="text" name="adddoctorname"></input>
+										<label for="adddoctorname">Numer telefonu</label>
 										<input type="text" name="adddoctornumber"></input>
 										<?php
 										$clinic = new Clinic;
@@ -109,23 +114,23 @@ if(isset($_POST['adddoctor']))
 										?>
 										
 										<input type="submit" name="adddoctor" value="Dodaj lekarza"></input>
-									</form>
+									</form></div>
 								<?php
 								$doctor = new Doctor;
 								echo $doctor->getDoctorsList();
 								?>
-							</div></div>
+							</div>
 						</div></div>
 					</div>
 					<div class="row66"><div class="inrow">
 						<h3>Lista rejestracji</h3>
 						<div class="list">
-							<form action="administrator.php" method="POST">
+							<!--<form action="administrator.php" method="POST">
 								<input type="submit" name="adddate" value="Dodaj rejestrację"></input>
-							</form>
+							</form>-->
 							<?php
 								$date = new Date;
-								echo($date->getDatesListSelect(false));
+								echo $date->getDatesList();
 								?>
 						</div>
 					</div></div>

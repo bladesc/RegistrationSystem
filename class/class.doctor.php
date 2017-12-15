@@ -39,7 +39,7 @@ class Doctor
 			{
 				$html .= "<div class='data10'>{$value['id']}</div><div class='data60'>{$value['name']}</div><div class='data30'><form action='administrator.php' methd='POST'><input type='hidden' value='{$value['id']}' name='idcity'></input><input type='submit' value='Usuń' name='deletecity'></input></form></div>";
 			}
-			$html .="<div class='box_footer'></div>";
+			$html .="<div class='box_footer'></div></div>";
 			
 			return $html;
 			
