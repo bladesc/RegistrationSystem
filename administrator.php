@@ -30,8 +30,10 @@ if(isset($_POST['adddoctor']))
 <html>
    <head>
    
-	<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,800|Open+Sans:300,400,700" rel="stylesheet"> 
-	<link rel="Stylesheet" type="text/css" href="css/style.css" />
+		<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,800|Open+Sans:300,400,700" rel="stylesheet"> 
+		<link rel="Stylesheet" type="text/css" href="css/style.css" />
+		<script src="js/jquery.3.2.1.js"></script>
+		<script src="js/functions.js"></script>
    
    </head>
   <body style="background: none">
@@ -57,10 +59,13 @@ if(isset($_POST['adddoctor']))
 						<div class="row100"><div class="inrow">
 							<h3>Lista miast</h3>
 							<div class="list">
-								<form action="administrator.php" method="POST">
-									<input type="text" name="addcityname"></input>
-									<input type="submit" name="addcity" value="Dodaj miasto"></input>
-								</form>
+								<button id="box_city_b">Dodaj miasto</button>
+								<div id="box_city">
+									<form action="administrator.php" method="POST">
+										<input type="text" name="addcityname"></input>
+										<input type="submit" name="addcity" value="Dodaj miasto"></input>
+									</form>
+								</div>
 								<?php
 								$city = new City;
 								echo $city->getCitiesListSelect(false);
@@ -71,15 +76,18 @@ if(isset($_POST['adddoctor']))
 						<div class="row100"><div class="inrow">
 							<h3>Lista klinik</h3>
 							<div class="list">
-								<form action="administrator.php" method="POST">
-								<input type="text" name="addclinicname"></input>
-								<input type="text" name="addclinicadress"></input>
-								<?php
-									$city = new City;
-									echo $city->getCitiesListSelect(true);
-								?>
-									<input type="submit" name="addclinic" value="Dodaj klinikę"></input>
-								</form>
+								<button id="box_clinic_b">Dodaj miasto</button>
+								<div id="box_clinic">
+									<form action="administrator.php" method="POST">
+										<input type="text" name="addclinicname"></input>
+										<input type="text" name="addclinicadress"></input>
+										<?php
+											$city = new City;
+											echo $city->getCitiesListSelect(true);
+										?>
+										<input type="submit" name="addclinic" value="Dodaj klinikę"></input>
+									</form>
+								</div>
 								<?php
 								$clinic = new Clinic;
 								echo $clinic->getClinicsList();
@@ -90,22 +98,23 @@ if(isset($_POST['adddoctor']))
 						<div class="row100"><div class="inrow">
 							<h3>Lista lekarzy</h3>
 							<div class="list">
-								
-								<form action="administrator.php" method="POST">
-									<input type="text" name="adddoctorname"></input>
-									<input type="text" name="adddoctornumber"></input>
-									<?php
-									$clinic = new Clinic;
-									echo $clinic->getClinicsListSelectAll();
-									?>
-									
-									<input type="submit" name="adddoctor" value="Dodaj lekarza"></input>
-								</form>
+								<button id="box_doctor_b">Dodaj miasto</button>
+								<div id="box_doctor">
+									<form action="administrator.php" method="POST">
+										<input type="text" name="adddoctorname"></input>
+										<input type="text" name="adddoctornumber"></input>
+										<?php
+										$clinic = new Clinic;
+										echo $clinic->getClinicsListSelectAll();
+										?>
+										
+										<input type="submit" name="adddoctor" value="Dodaj lekarza"></input>
+									</form>
 								<?php
 								$doctor = new Doctor;
 								echo $doctor->getDoctorsList();
 								?>
-							</div>
+							</div></div>
 						</div></div>
 					</div>
 					<div class="row66"><div class="inrow">
