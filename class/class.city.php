@@ -7,6 +7,7 @@ class City
 	private $db;
 	private $query;
 	private $city;
+	private $err_client;
 	
 	
 	const NAME_SELECT_CITY = "city";
@@ -29,7 +30,7 @@ class City
 			$y=0;
 			foreach ($result as $row) 
 			{
-				$tab_city[$y]['city'] = $row['citycame'];
+				$tab_city[$y]['city'] = $row['cityname'];
 				$tab_city[$y]['id'] = $row['id'];
 				$y+=1;
 			}
@@ -47,7 +48,7 @@ class City
 			}
 			else
 			{
-				$name = "<div class='list_data'>";
+				$html = "<div class='list_data'>";
 				
 					
 					foreach($tab_city as $key=>$value) 
@@ -77,7 +78,7 @@ class City
 		else
 		{	
 			$city = Functions::correctValue($city);
-			$query="SELECT `citycame` FROM `cities` WHERE `citycame`='$city'";
+			$query="SELECT `cityname` FROM `cities` WHERE `cityname`='$city'";
 			$result = $this->con->selectWhere($query);
 			
 			if($result->rowCount()>0) 
@@ -89,7 +90,7 @@ class City
 			else  
 			{		
 				
-				$query="INSERT INTO `cities` (`id`, `citycame`) VALUES ('', '$city')";
+				$query="INSERT INTO `cities` (`id`, `cityname`) VALUES ('', '$city')";
 				if($this->con->selectWhere($query))
 				{
 					$_SESSION['communicate']['status'] = true;

@@ -13,6 +13,12 @@ if(isset($_POST['addcity']))
 		$city->addCity($_POST['addcityname']);
 }	
 
+if(isset($_POST['addclinic']))
+{
+		$city = new Clinic;
+		$city->addClinic($_POST['addclinicname']);
+}	
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -31,9 +37,13 @@ if(isset($_POST['addcity']))
 				<div class="incontent">
 					<h2>Panel administracyjny</h2>
 					<?php 
-					if($_SESSION['communicate']['status'])
+					if(isset($_SESSION['communicate']['status']))
 					{
-						echo $_SESSION['communicate']['text'];
+						if($_SESSION['communicate']['status'])
+						{
+							echo $_SESSION['communicate']['text'];
+						}
+						
 					}
 					?>
 			
@@ -47,7 +57,7 @@ if(isset($_POST['addcity']))
 								</form>
 								<?php
 								$city = new City;
-								echo($city->getCitiesListSelect(false));
+								echo $city->getCitiesListSelect(false);
 								?>
 							</div>
 						</div></div>
@@ -56,11 +66,16 @@ if(isset($_POST['addcity']))
 							<h3>Lista klinik</h3>
 							<div class="list">
 								<form action="administrator.php" method="GET">
+								<input type="text" name="addclinicname"></input>
+								<?php
+									$city = new City;
+									echo($city->getCitiesListSelect(true));
+								?>
 									<input type="submit" name="addclinic" value="Dodaj klinikę"></input>
 								</form>
 								<?php
 								$clinic = new Clinic;
-								echo($clinic->getClinicsListSelect(false));
+								echo $clinic->getClinicsList();
 								?>
 							</div>
 						</div></div>
@@ -73,7 +88,7 @@ if(isset($_POST['addcity']))
 								</form>
 								<?php
 								$doctor = new Doctor;
-								echo($doctor->getDoctorsListSelect(false));
+								echo $doctor->getDoctorsList();
 								?>
 							</div>
 						</div></div>

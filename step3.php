@@ -1,6 +1,7 @@
 <?php
 if(isset($_GET['clinic']))
 {
+
 	$doctor = new Doctor;
 	$doctors_list = $doctor->getDoctorsListSelect($_GET['clinic']);
 }

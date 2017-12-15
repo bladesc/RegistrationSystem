@@ -12,7 +12,7 @@ function __construct()
 {
 	$this->errors=Array();
 	$this->db = new DbManager;
-	$this->db->dbConnect();
+	$this->db->getConnect();
 }
 
 public function createTables()
@@ -61,37 +61,22 @@ public function createTables()
 
 	
 	
-	$this->db->dbSetQuery($guery1);
-	if(!$this->db->dbExecute())
-	{   $this->db->showErrors();
-		die('bląd instalacji tabela1');
-	}
-	$this->db->dbSetQuery($guery2);
-	if(!$this->db->dbExecute())
-	{   $this->db->showErrors();
-		die('bląd instalacji tabela2');
-	}
-	$this->db->dbSetQuery($guery3);
-	if(!$this->db->dbExecute())
-	{   $this->db->showErrors();
-		die('bląd instalacji tabela3');
-	}
-	$this->db->dbSetQuery($guery4);
-	if(!$this->db->dbExecute())
-	{   $this->db->showErrors();
-		die('bląd instalacji tabela4');
-	}
-	$this->db->dbSetQuery($guery5);
-	if(!$this->db->dbExecute())
-	{   $this->db->showErrors();
-		die('bląd instalacji tabela5');
-	}
+	$this->db->selectWhere($guery1);
+	
+	$this->db->selectWhere($guery2);
+	
+	$this->db->selectWhere($guery3);
+	
+	$this->db->selectWhere($guery4);
+	
+	$this->db->selectWhere($guery5);
+	
 	
 }
 
 function __destruct()
 {
-	$this->db->dbClose();
+	$this->db->closeConnection();
 }
 
 }

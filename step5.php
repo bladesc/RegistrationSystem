@@ -8,6 +8,7 @@
 	</ul>
 </div>
 <div id="box_form">
+	<h3>Lista dostępnych dat</h3>
 	<form method="GET" action="rejestracja.php">
 		<label for="client_name">Imię</label>
 		<input type="text" name="client_name" value=""></input>

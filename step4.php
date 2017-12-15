@@ -1,6 +1,7 @@
 <?php
 if(isset($_GET['doctor']))
 {
+
 	$date = new Date;
 	$dates_list = $date->getDatesListSelect($_GET['doctor']);
 }
@@ -20,6 +21,7 @@ else
 	</ul>
 </div>
 <div id="box_form">
+	<h3>Lista dostępnych dat</h3>
 	<form method="GET" action="rejestracja.php">
 		<?php echo $dates_list; ?>
 		<input type="hidden" name="id" value="5"></input>	

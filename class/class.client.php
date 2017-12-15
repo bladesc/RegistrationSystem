@@ -7,6 +7,7 @@ class Client
 	private $client;
 	private $db;
 	private $query;
+	private $err_client;
 	
 	const NAME_SELECT_CLIENT = "client";
 	

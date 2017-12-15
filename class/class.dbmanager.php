@@ -8,13 +8,7 @@ private $dbname = 'project_registration';
 private $host = 'localhost';
 private $user = 'root';
 private $pass = '';
-/*
-//hekko
-private $dbname = '';
-private $host = 'localhost';
-private $user = '';
-private $pass = '';
-*/
+
 private $charset = 'utf8';
 private $data;
 public $conn;
@@ -59,10 +53,7 @@ public function selectWhere($query)
 				echo $e->getMessage();
 			}
 			
-			if($value)
-			{
-				echo "tabela zainstalowana<br/>";
-			}
+			
 			return $result;
 }
 

@@ -1,4 +1,4 @@
-﻿<?php
+﻿<?php ini_set('error_reporting', E_ALL);
 include('settings/settings.php');
 include("class/class.functions.php");
 include("class/class.dbmanager.php");
