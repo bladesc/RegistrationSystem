@@ -54,3 +54,8 @@ float: left; padding: 30px 0;}
 .houractive { background: #ffffff; border: 1px solid #d4e2e7; padding: 10px 0;}
 .hourinactive	{ background: #fd1f1f; border: 1px solid #d4e2e7; padding: 10px 0;}
 .box_month { padding: 10px 0;}
+.tick { background: #06d014 !important; color: #fff;}
+.tickw { background: #c5e3ed !important;}
+.box_month { display: inline; }
+.box_year { display: inline; }
+.box_hours {margin-top: 30px;}

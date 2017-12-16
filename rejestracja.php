@@ -11,9 +11,10 @@ include("class/class.doctor.php");
 <html>
    <head>
    
-	<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,800|Open+Sans:300,400,700" rel="stylesheet"> 
-	<link rel="Stylesheet" type="text/css" href="css/style.css" />
-   
+		<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,800|Open+Sans:300,400,700" rel="stylesheet"> 
+		<link rel="Stylesheet" type="text/css" href="css/style.css" />
+		<script src="js/jquery.3.2.1.js"></script>
+		<script src="js/functions.js"></script>
    </head>
    <body style="background: none">
 		<div id="box_page" >

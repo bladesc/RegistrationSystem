@@ -34,7 +34,8 @@ class Date
 			$html .= "
 				<div class='date_window'>
 					<div class='box_day'>{$date_day}</div>
-					<div class='box_month'>{$date_month}.{$date_year}</div>
+					<div class='box_month'>{$date_month}</div>
+					<div class='box_year'>{$date_year}</div>
 					$hours
 				</div>
 				
