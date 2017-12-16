@@ -26,7 +26,7 @@ else
 		<?php 
 		$dateform = new Date;
 		$dateform->generateDateForm(); ?>
-		<?php echo $dates_list; ?>
+		
 		<input type="hidden" name="id" value="5"></input>	
 		<input class="i_allforms" type="submit" value="Dalej" name="send"></input>
 	</form>			

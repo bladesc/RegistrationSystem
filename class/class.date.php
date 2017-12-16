@@ -28,22 +28,67 @@ class Date
 			$date_year = date("Y", $dateactual);
 			$date_month = date("m", $dateactual);
 			$date_day = date("d", $dateactual);
+			
+			$hours = $this->getDatesFromDate($dateactual);
 
 			$html .= "
 				<div class='date_window'>
-					<form action='link' method='GET'>
-						<div class='box_day'>{$date_day}</div>
-						<div class='box_month'>{$date_month}.{$date_year}</div>
-						
-						<input type='hidden' name='b_day' value='{$date_day}'></input>
-						<input type='hidden' name='b_month' value='{$date_month}'></input>
-						<input type='hidden' name='b_year' value='{$date_year}'></input>
-					</form>
-				</div>	
+					<div class='box_day'>{$date_day}</div>
+					<div class='box_month'>{$date_month}.{$date_year}</div>
+					$hours
+				</div>
+				
 				";
 		}
 		
 		echo $html;		
+	}
+	
+	private function getDatesFromDate($date)
+	{
+		$datefrom = date("Y-m-d 8:0:0", $date);
+		$dateto = date("Y-m-d 16:59:59", $date);
+		
+		$query="SELECT * FROM `dates` WHERE `chdate` > '$datefrom' AND `chdate` < '$dateto'";
+		$result = $this->con->selectWhere($query);
+			
+		
+			$y=0;
+			$check_array = array(8,9,10,11,12,13,14,15,16);
+			
+			foreach ($result as $row) 
+			{
+				$tab_date[$y] = $row['chdate'];
+				$dateH = date("H", strtotime($tab_date[$y]));
+				//echo $dateH;
+				$index_delete = array_search("$dateH",  $check_array); // $klucz = 2;
+				unset($check_array[$index_delete]);
+				$y+=1;
+				
+			}	
+			$html = "<div class='box_hours'>";
+			for($i=8; $i<17; $i++)
+			{
+				if(in_array($i, $check_array))
+				{
+					$html .= "<div class='houractive'>{$i}</div>";
+				}
+				else
+				{
+					$html .= "<div class='hourinactive'>{$i}</div>";
+				}
+				
+			}
+			return $html;
+			
+			$html = "<div class='box_hours'>";
+			foreach($check_array as $key=>$value)
+			{
+				$html .= "<div class='hour'>{$value}</div>";
+			}
+			$html .= "</div>";
+			return $html;
+		
 	}
 	
 	public function getDatesList()
