@@ -79,15 +79,10 @@ class Date
 				}
 				
 			}
-			return $html;
-			
-			$html = "<div class='box_hours'>";
-			foreach($check_array as $key=>$value)
-			{
-				$html .= "<div class='hour'>{$value}</div>";
-			}
 			$html .= "</div>";
 			return $html;
+			
+		
 		
 	}
 	
