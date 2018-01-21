@@ -17,7 +17,6 @@ else
 		<li class="lidone">Klinika</li>
 		<li class="liactive">Lekarz</li>
 		<li>Data</li>
-		<li>Dane osobowe</li>
 	</ul>
 </div>
 <div id="box_form">

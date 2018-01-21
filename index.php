@@ -21,7 +21,7 @@ include("class/class.dbmanager.php");
 				Rejestracja <br/>pacjentów <br/>online
 				</h1>
 				<form method="GET" action="rejestracja.php">
-					<input type="hidden" name="id" value="1"></input>
+					<input type="hidden" name="id" value="0"></input>
 					<input type="submit" name="send" value="Dokonaj rejestracji >>" id="i_register"></input>
 				</form>
 			</div>

@@ -30,7 +30,8 @@ include("class/class.doctor.php");
 					{
 						switch($_GET['id']) 
 						{
-							
+							case 0: include_once('step0.php');
+							break;
 							case 1: include_once('step1.php');
 							break;
 							case 2: include_once('step2.php');
@@ -54,7 +55,7 @@ include("class/class.doctor.php");
 				</div>
 			</div>
 			
-			<div id="copyright">
+			<div id="copyright2">
 				<p>Projekt: <b>Damian Szczęsny & Adrian Głąbik</b></p>
 			</div>
 		</div>

@@ -56,6 +56,7 @@ public function createTables()
     id INT NOT NULL AUTO_INCREMENT,
     chdate DATETIME,
 	iddoctors INT,
+	idclient INT,
     PRIMARY KEY (id)
 	)";
 

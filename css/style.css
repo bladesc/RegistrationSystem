@@ -8,6 +8,8 @@ html {  height: 100%; width: 100%; margin: 0; padding: 0; font-family: Arial, Ta
 		#i_register:hover { border-radius: 40px; background: #097edb;}
 		#copyright p { color: #6e7e99; opacity: 0.8; font-family: 'Open Sans', sans-serif; font-size: 17px;}
 		#copyright { position: absolute; bottom: 50px; left: 0;}
+		#copyright2 p { color: #6e7e99; opacity: 0.8; font-family: 'Open Sans', sans-serif; font-size: 17px;}
+		#copyright2 { }
 		#box_form { }
 		#box_main_form {padding: 60px 0 60px 90px; width: 600px; color: #fff; font-family: 'Open Sans', sans-serif; font-size: 17px;}
 		#box_main_form div { margin-bottom: 30px;}
@@ -22,6 +24,7 @@ html {  height: 100%; width: 100%; margin: 0; padding: 0; font-family: Arial, Ta
 		#box_navigation ul li { text-align: center;font-size: 17px; width: 19.8%; display: inline-block; padding: 20px 0 20px 0; margin: 0 0.1%; border-bottom: 4px solid #1bace8;} 
 		#inp_city { width: 400px; font-size: 21px; border: 1px solid #cdcdcd; padding: 10px;}
 		#box_form { width: 100%; text-align: center; padding: 40px 0; }
+		.inp_all { width: 400px; font-size: 21px; border: 1px solid #cdcdcd; padding: 10px; margin: 10px auto; display: block;}
 		.i_allforms { margin: 20px auto; text-decoration: none; display: block; transition: 0.4s; background: #0460a9; color: #fff; padding: 10px 30px; display: block; margin-top: 20px; border: none; border-radius: 5px; font-size: 19px; cursor: pointer;}
 		.i_allforms:hover { border-radius: 40px; background: #097edb;}
 		.liactive { background: #1bace8; color: #fff }

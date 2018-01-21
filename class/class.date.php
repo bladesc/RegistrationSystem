@@ -18,6 +18,45 @@ class Date
 		$this->con->getConnect();
 	}
 	
+	public function saveDate($get)
+	{
+		$date_now = mktime($get['hour'], 0, 0, $get['month'], $get['day'], $get['year']);
+		
+		//$query="INSERT INTO `dates` (`id`, `chdate`, `idcostors`, `idclient`) VALUES ('', $date_now, $get['doctor'], $get['client'])";
+		$result = $this->con->selectWhere($query);
+			
+		if($result->rowCount()>0) 
+		{
+			$y=0;
+			foreach ($result as $row) 
+			{
+				$tab_date[$y]['id'] = $row['id'];
+				$tab_date[$y]['data'] = $row['chdate'];
+				$tab_date[$y]['iddoctor'] = $row['iddoctors'];
+				
+				$y+=1;
+			}
+			
+			$html = "<div class='list_data'>";
+				
+					
+			foreach($tab_date as $key=>$value) 
+			{
+				$html .= "<div class='data10'>{$value['id']}</div><div class='data60'>{$value['data']}</div><div class='data30'><form action='administrator.php' methd='POST'><input type='hidden' value='{$value['id']}' name=idcity'></input><input type='submit' value='Usuń' name='deletecity'></input</form></div>";
+			}
+			$html .="<div class='box_footer'></div>";
+			
+			return $html;
+			
+		}
+			
+		else  
+		{		
+			$this->err_client .= "Brak danych w bazie";
+		}
+		
+	}
+	
 	public function generateDateForm()
 	{
 		$now = date("Y-m-d H:i:s");
@@ -42,7 +81,7 @@ class Date
 				";
 		}
 		
-		echo $html;		
+		return $html;		
 	}
 	
 	private function getDatesFromDate($date)
