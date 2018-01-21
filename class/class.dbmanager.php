@@ -13,6 +13,7 @@ private $charset = 'utf8';
 private $data;
 public $conn;
 private $db;
+public $last_id;
 
 
 function __construct() {}
@@ -47,6 +48,7 @@ public function selectWhere($query)
 	try
 			{
 				$result = $db->query($query);
+				$this->last_id = $db->lastInsertId();
 			}
 			catch(PDOException $e)
 			{

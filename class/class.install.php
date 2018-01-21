@@ -43,6 +43,7 @@ public function createTables()
     id INT NOT NULL AUTO_INCREMENT,
 	iddoctors INT,
     firstname VARCHAR(40),
+	surname VARCHAR(40),
 	street VARCHAR(40),
 	city VARCHAR(40),
 	code VARCHAR(6),
