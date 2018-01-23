@@ -12,6 +12,7 @@ html {  height: 100%; width: 100%; margin: 0; padding: 0; font-family: Arial, Ta
 		#copyright2 { }
 		#box_form { }
 		.form_errors { padding: 20px 0; text-align: center; margin: 0 0 20px 0; border: 1px solid #ff7676; background: #ffe0e0; color: #5e5050;}
+		.positive_comments { padding: 20px 0; text-align: center; margin: 0 0 20px 0; border: 1px solid #85ff5b; background: #dbffcf; color: #3a4038;}
 		#box_main_form {padding: 60px 0 60px 90px; width: 600px; color: #fff; font-family: 'Open Sans', sans-serif; font-size: 17px;}
 		#box_main_form div { margin-bottom: 30px;}
 		#box_main_form div input { width: 100%; height: 40px; line-height: 40px; margin-top: 5px;}
@@ -20,13 +21,14 @@ html {  height: 100%; width: 100%; margin: 0; padding: 0; font-family: Arial, Ta
 		#content { width: 100%; }
 		.incontent { width: 1200px; margin: 0 auto; }
 		h2 {  color: #1bace8; width: 100%; text-align: center; font-size: 48px; font-family: 'Alegreya Sans', sans-serif; font-weight: 800; margin: 0; padding: 40px 0 10px 0; }
-		#box_navigation { width: 100%; }
+		#box_navigation { width: 100%; text-align: center; }
 		#box_navigation ul { font-size: 0; list-style-type: none; margin: 0; padding: 0; width: 100%;}
 		#box_navigation ul li { text-align: center;font-size: 17px; width: 19.8%; display: inline-block; padding: 20px 0 20px 0; margin: 0 0.1%; border-bottom: 4px solid #1bace8;} 
 		#inp_city { width: 400px; font-size: 21px; border: 1px solid #cdcdcd; padding: 10px;}
 		#box_form { width: 100%; text-align: center; padding: 40px 0; }
 		.inp_all { width: 400px; font-size: 21px; border: 1px solid #cdcdcd; padding: 10px; margin: 10px auto; display: block;}
 		.i_allforms { margin: 20px auto; text-decoration: none; display: block; transition: 0.4s; background: #0460a9; color: #fff; padding: 10px 30px; display: block; margin-top: 20px; border: none; border-radius: 5px; font-size: 19px; cursor: pointer;}
+		.allbut { margin: 20px; text-decoration: none; display: inline-block; float: left; transition: 0.4s; background: #0460a9; color: #fff; padding: 10px 30px; display: block; margin-top: 20px; border: none; border-radius: 5px; font-size: 19px; cursor: pointer;}
 		.i_allforms:hover { border-radius: 40px; background: #097edb;}
 		.liactive { background: #1bace8; color: #fff }
 		.liactive2 { background: #1bace8; color: #fff }

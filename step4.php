@@ -21,7 +21,7 @@ else
 	</ul>
 </div>
 <div id="box_form">
-	<h3>Lista dostępnych dat</h3>
+	<h3>Wybierz dostępną datę </h3>
 	<?php 
 		echo $dates_list;?>
 		<div id="preview">
@@ -36,7 +36,8 @@ else
 		<input type="hidden" id="i_year" name="year" value=""></input>
 		<input type="hidden" id="i_month" name="month" value=""></input>
 		<input type="hidden" id="i_hour" name="hour" value=""></input>
-		<input type="hidden" name="id" value="5"></input>	
+		<input type="hidden" name="id" value="5"></input>
+		<input type="hidden" name="client" value="<?php echo $_GET['client']; ?>"></input>	
 		<input class="i_allforms" type="submit" value="Dalej" name="send"></input>
 	</form>			
 </div>

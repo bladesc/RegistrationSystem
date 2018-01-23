@@ -11,7 +11,14 @@ include("class/class.client.php");
 <!DOCTYPE html>
 <html>
    <head>
-   
+		<meta charset="UTF-8">
+		<meta name="description" content="Projekt - rejesracja pacjentów">
+		<meta name="keywords" content="rejestracja online, rejestracja pacjentów">
+		<meta name="author" content="Damian Szczęsny, Adrian Głąbik">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<title>Projekt - rejesracja pacjentów</title>
+		
 		<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,800|Open+Sans:300,400,700" rel="stylesheet"> 
 		<link rel="Stylesheet" type="text/css" href="css/style.css" />
 		<script src="js/jquery.3.2.1.js"></script>

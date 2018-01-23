@@ -43,15 +43,15 @@ else
 </div>
 <div id="box_form">
 	<h3>Podaj swoje dane</h3>
-	<div class="form_errors">
+	
 	<?php if(isset($err_client))
 	{
-		echo $err_client;
+		echo '<div class="form_errors">'.$err_client.'</div>';
 		
 	}
 	?>
 	
-	</div>
+	
 	<form method="GET" action="rejestracja.php">
 		<label for="client_name">Imię</label>
 		<input class="inp_all" type="text" name="client_name" value=""></input>

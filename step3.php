@@ -13,6 +13,7 @@ else
 
 <div id="box_navigation">
 	<ul>
+		<li class="lidone">Dane osobowe</li>
 		<li class="lidone">Miasto</li>
 		<li class="lidone">Klinika</li>
 		<li class="liactive">Lekarz</li>
@@ -22,7 +23,8 @@ else
 <div id="box_form">
 	<form method="GET" action="rejestracja.php">
 		<?php echo $doctors_list; ?>
-		<input type="hidden" name="id" value="4"></input>	
+		<input type="hidden" name="id" value="4"></input>
+		<input type="hidden" name="client" value="<?php echo $_GET['client']; ?>"></input>	
 		<input class="i_allforms" type="submit" value="Dalej" name="send"></input>
 	</form>			
 </div>

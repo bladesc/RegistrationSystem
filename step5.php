@@ -2,10 +2,10 @@
 if(isset($_GET['day']) && isset($_GET['year']) && isset($_GET['month']) && isset($_GET['hour']) && isset($_GET['id']))
 {
 
-	/*
+	
 	$date = new Date;
-	$date->addDates($_GET);*/
-	print_r($_GET);
+	$date->addDates($_GET);
+	
 }
 else
 {

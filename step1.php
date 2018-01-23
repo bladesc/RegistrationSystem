@@ -16,6 +16,7 @@ $city_list = $city->getCitiesListSelect(true);
 	<form method="GET" action="rejestracja.php">
 		<?php echo $city_list; ?>
 		<input type="hidden" name="id" value="2"></input>
+		<input type="hidden" name="client" value="<?php echo $_GET['client']; ?>"></input>
 		<input class="i_allforms" type="submit" value="Dalej" name="send"></input>
 	</form>			
 </div>

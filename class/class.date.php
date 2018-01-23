@@ -212,8 +212,35 @@ class Date
 		
 	}
 	
-	public function addDates($date)
-	{}
+	public function addDates($date_tab)
+	{
+		
+		
+		foreach($date_tab as $key=>$value)
+		{
+			$value=Functions::correctValue($value);
+			$date_tab[$key]=$value;
+		}
+		$date = date("$date_tab[year]-$date_tab[month]-$date_tab[day], $date_tab[hour]:0:0");   
+		
+		$query="INSERT INTO `dates` (`ID`, `CHDATE`, `IDDOCTORS`, `IDCLIENT`) VALUES ('', '$date', '$date_tab[doctor]', '$date_tab[client]')";
+		$result = $this->con->selectWhere($query);
+		
+		if($result->rowCount()>0) 
+		{
+			
+			
+			header("Location: rejestracja.php?id=6");
+			
+		}
+			
+		else  
+		{		
+			$this->err_client .= "Nie można dodać rekordu";
+		}
+		
+		
+	}
 	
 	public function removeDates($id)
 	{}

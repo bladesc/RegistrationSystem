@@ -22,7 +22,8 @@ else
 <div id="box_form">
 	<form method="GET" action="rejestracja.php">
 		<?php echo $clinic_list; ?>
-		<input type="hidden" name="id" value="3"></input>	
+		<input type="hidden" name="id" value="3"></input>
+		<input type="hidden" name="client" value="<?php echo $_GET['client']; ?>"></input>		
 		<input class="i_allforms" type="submit" value="Dalej" name="send"></input>
 	</form>			
 </div>
