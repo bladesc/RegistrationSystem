@@ -77,7 +77,7 @@ if(isset($_POST['adddoctor']))
 						<div class="row100"><div class="inrow">
 							<h3>Lista klinik</h3>
 							<div class="list">
-								<button id="box_clinic_b">Dodaj miasto</button>
+								<button id="box_clinic_b">Dodaj klinikę</button>
 								<div id="box_clinic">
 									<form action="administrator.php" method="POST">
 										<label for="addclinicname">Nazwa kliniki</label>
@@ -101,7 +101,7 @@ if(isset($_POST['adddoctor']))
 						<div class="row100"><div class="inrow">
 							<h3>Lista lekarzy</h3>
 							<div class="list">
-								<button id="box_doctor_b">Dodaj miasto</button>
+								<button id="box_doctor_b">Dodaj lekarza</button>
 								<div id="box_doctor">
 									<form action="administrator.php" method="POST">
 										<label for="adddoctorname">Nazwa doktora</label>

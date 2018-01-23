@@ -4,7 +4,7 @@ html {  height: 100%; width: 100%; margin: 0; padding: 0; font-family: Arial, Ta
 		#haslo { position: absolute; top: 40%; margin-top: -185px;}
 		#haslo h1 { font-size: 100px; color: #1bace8; font-family: 'Alegreya Sans', sans-serif; font-weight: 800; margin: 0; padding: 0;}
 		#box_page { height: 100%; position: relative; width: 1200px; margin: 0 auto;}
-		#i_register { float: left; text-decoration: none; display: block; transition: 0.4s; background: #0460a9; color: #fff; padding: 10px 30px; display: block; margin-top: 20px; border: none; border-radius: 5px; font-size: 19px; cursor: pointer;}
+		#i_register { float: left; text-decoration: none; display: block; transition: 0.4s; background: #0460a9; color: #fff; padding: 14px 50px; display: block; margin-top: 20px; border: none; border-radius: 5px; font-size: 19px; cursor: pointer; font-weight: 700;}
 		#i_register:hover { border-radius: 40px; background: #097edb;}
 		#copyright p { color: #6e7e99; opacity: 0.8; font-family: 'Open Sans', sans-serif; font-size: 17px;}
 		#copyright { position: absolute; bottom: 50px; left: 0;}
@@ -28,7 +28,8 @@ html {  height: 100%; width: 100%; margin: 0; padding: 0; font-family: Arial, Ta
 		#box_form { width: 100%; text-align: center; padding: 40px 0; }
 		.inp_all { width: 400px; font-size: 21px; border: 1px solid #cdcdcd; padding: 10px; margin: 10px auto; display: block;}
 		.i_allforms { margin: 20px auto; text-decoration: none; display: block; transition: 0.4s; background: #0460a9; color: #fff; padding: 10px 30px; display: block; margin-top: 20px; border: none; border-radius: 5px; font-size: 19px; cursor: pointer;}
-		.allbut { margin: 20px; text-decoration: none; display: inline-block; float: left; transition: 0.4s; background: #0460a9; color: #fff; padding: 10px 30px; display: block; margin-top: 20px; border: none; border-radius: 5px; font-size: 19px; cursor: pointer;}
+		.allbut { transition: 0.4s; margin: 20px; text-decoration: none; display: inline-block; float: left; transition: 0.4s; background: #0460a9; color: #fff; padding: 10px 30px; display: block; margin-top: 20px; border: none; border-radius: 5px; font-size: 19px; cursor: pointer;}
+		.allbut:hover { border-radius: 40px; background: #097edb;}
 		.i_allforms:hover { border-radius: 40px; background: #097edb;}
 		.liactive { background: #1bace8; color: #fff }
 		.liactive2 { background: #1bace8; color: #fff }
@@ -37,7 +38,14 @@ html {  height: 100%; width: 100%; margin: 0; padding: 0; font-family: Arial, Ta
 		.row100 { background: #f2f4f8; width: 100%;  padding: 40px 0; margin: 20px 0;}
 		.row33 { float: left;  width: 33.3%; }
 		.row66 { background: #f2f4f8; width: 63.3%; padding: 40px 0; margin: 20px 0; float: right;}
-		h3 { font-size: 20px; font-weight: bold; margin: 0 0 20px 0; padding: 0;}
+		h3 { font-size: 20px;
+font-weight: bold;
+margin: 0 0 20px 0;
+padding: 0;
+    
+border-bottom: 1px solid #0094f2;
+padding-bottom: 20px;
+display: inline-block;}
 		.inrow { width: 80%; margin: 0 10%;}
 		.commgood { width: 100%; padding: 10px 0; text-align: center; border: 1px solid #00ff30; background: #daffe1; color: #414942;}
 		.commbad { width: 100%; padding: 10px 0; text-align: center; border: 1px solid #ff0000; background: #f7dbdb; color: #494141;}

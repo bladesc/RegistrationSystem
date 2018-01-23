@@ -22,7 +22,7 @@ include("class/class.dbmanager.php");
 				</h1>
 				<form method="GET" action="rejestracja.php">
 					<input type="hidden" name="id" value="0"></input>
-					<input type="submit" name="send" value="Dokonaj rejestracji >>" id="i_register"></input>
+					<input type="submit" name="send" value="Dokonaj Rejestracji Online >>" id="i_register"></input>
 				</form>
 			</div>
 			

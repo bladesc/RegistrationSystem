@@ -61,7 +61,7 @@ class Date
 	{
 		$now = date("Y-m-d H:i:s");
 		$nownumericdate = strtotime($now);
-		$html = "";
+		$html = "<div id='box_dates'>";
 		for($i=0; $i<7; $i++)
 		{	$dateactual = strtotime("+$i day", $nownumericdate);
 			$date_year = date("Y", $dateactual);
@@ -80,7 +80,7 @@ class Date
 				
 				";
 		}
-		
+		$html .= "</div>";
 		return $html;		
 	}
 	
