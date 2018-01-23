@@ -57,7 +57,7 @@ class Date
 		
 	}
 	
-	public function generateDateForm()
+	public function generateDateForm($id_doctor)
 	{
 		$now = date("Y-m-d H:i:s");
 		$nownumericdate = strtotime($now);
@@ -68,7 +68,7 @@ class Date
 			$date_month = date("m", $dateactual);
 			$date_day = date("d", $dateactual);
 			
-			$hours = $this->getDatesFromDate($dateactual);
+			$hours = $this->getDatesFromDate($dateactual,$id_doctor);
 
 			$html .= "
 				<div class='date_window'>
@@ -84,12 +84,12 @@ class Date
 		return $html;		
 	}
 	
-	private function getDatesFromDate($date)
+	private function getDatesFromDate($date,$id_doctor)
 	{
 		$datefrom = date("Y-m-d 8:0:0", $date);
 		$dateto = date("Y-m-d 16:59:59", $date);
 		
-		$query="SELECT * FROM `dates` WHERE `chdate` > '$datefrom' AND `chdate` < '$dateto'";
+		$query="SELECT * FROM `dates` WHERE `iddoctors` = '$id_doctor' AND `chdate` > '$datefrom' AND `chdate` < '$dateto'";
 		$result = $this->con->selectWhere($query);
 			
 		

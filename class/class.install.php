@@ -80,7 +80,7 @@ public function makeData()
 {
 	$guery01 = "INSERT INTO `project_registration`.`cities` (`id`, `cityname`) VALUES (NULL, 'Białogard'), (NULL, 'Koszalin'), (NULL, 'Kołobrzeg')";
 	$guery02 = "INSERT INTO `project_registration`.`clinics` (`id`, `idcities`, `name`, `adress`) VALUES (NULL, '1', 'Klinika nr1', 'Jana Kochanowskiego 2a, '), (NULL, '2', 'Klinika nr1', 'Pomorska 12'), (NULL, '1', 'Klinika nr2', 'Aldony 15b'), (NULL, '2', 'Klinika nr2', 'Kołobrzeska 453'), (NULL, '2', 'Klinika nr3', 'Ignacego 34'), (NULL, '3', 'Klinika nr1', 'Staromiejska 15')";
-	$guery03 = "INSERT INTO `project_registration`.`doctors` (`id`, `idclinics`, `name`, `mobile`) VALUES (NULL, '1', 'Jan Kowalski', '566544344'), (NULL, '1', 'Łukasz Nowak', '348774884'), (NULL, '2', 'Krzysztof Borkowski', '4343434555'), (NULL, '2', 'Jan Mikuła', '348774884'), (NULL, '3', 'Ignacy Bąk', '348774884');";
+	$guery03 = "INSERT INTO `project_registration`.`doctors` (`id`, `idclinics`, `name`, `mobile`) VALUES (NULL, '1', 'Jan Kowalski', '566544344'), (NULL, '1', 'Łukasz Nowak', '348774884'), (NULL, '2', 'Krzysztof Borkowski', '4343434555'), (NULL, '2', 'Jan Mikuła', '348774884'), (NULL, '3', 'Ignacy Bąk', '348774884'), (NULL, '4', 'Magdalena Łyjak', '4343434555'), (NULL, '5', 'Joanna Kwiatoń', '348774884'), (NULL, '6', 'Mariusz Czerniewicz', '348774884');";
 	$this->db->selectWhere($guery01);
 	$this->db->selectWhere($guery02);
 	$this->db->selectWhere($guery03);

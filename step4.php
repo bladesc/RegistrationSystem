@@ -3,7 +3,7 @@ if(isset($_GET['doctor']))
 {
 
 	$dateform = new Date;
-	$dates_list = $dateform->generateDateForm(); 
+	$dates_list = $dateform->generateDateForm($_GET['doctor']); 
 }
 else
 {
